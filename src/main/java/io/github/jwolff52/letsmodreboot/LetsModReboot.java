@@ -7,6 +7,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import io.github.jwolff52.letsmodreboot.handler.ConfigurationHandler;
+import io.github.jwolff52.letsmodreboot.init.ModItems;
 import io.github.jwolff52.letsmodreboot.proxy.IProxy;
 import io.github.jwolff52.letsmodreboot.ref.R;
 import io.github.jwolff52.letsmodreboot.util.LogHelper;
@@ -33,6 +34,8 @@ public class LetsModReboot {
         instance = this;
 
         ConfigurationHandler.init(e.getSuggestedConfigurationFile());
+
+        ModItems.init();
 
         LogHelper.info("Pre-Initilization complete");
     }
