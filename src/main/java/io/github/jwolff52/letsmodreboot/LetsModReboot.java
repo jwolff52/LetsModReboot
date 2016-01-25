@@ -6,8 +6,11 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import io.github.jwolff52.letsmodreboot.client.handler.KeyInputEventHandler;
 import io.github.jwolff52.letsmodreboot.handler.ConfigurationHandler;
+import io.github.jwolff52.letsmodreboot.init.ModBlocks;
 import io.github.jwolff52.letsmodreboot.init.ModItems;
+import io.github.jwolff52.letsmodreboot.init.Recipes;
 import io.github.jwolff52.letsmodreboot.proxy.IProxy;
 import io.github.jwolff52.letsmodreboot.ref.R;
 import io.github.jwolff52.letsmodreboot.util.LogHelper;
@@ -35,7 +38,10 @@ public class LetsModReboot {
 
         ConfigurationHandler.init(e.getSuggestedConfigurationFile());
 
+        proxy.registerKeyBindings();
+
         ModItems.init();
+        ModBlocks.init();
 
         LogHelper.info("Pre-Initilization complete");
     }
@@ -47,13 +53,15 @@ public class LetsModReboot {
      * GUI Handler
      * Rendering
      * Tile Entities
-     * Recipies
+     * Recipes
      *
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+        FMLCommonHandler.instance().bus().register(new KeyInputEventHandler());
 
+        Recipes.init();
         LogHelper.info("Initilization complete");
     }
 

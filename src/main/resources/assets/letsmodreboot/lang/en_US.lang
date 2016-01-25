@@ -1,0 +1,13 @@
+# Item Localizations
+item.letsmodreboot:mapleLeaf.name=Maple Leaf
+
+# Block Localizations
+tile.letsmodreboot:flag.name=That canada flag thing
+
+# Creative Tab Localizations
+itemGroup.letsmodreboot=Let's Mod Reboot
+
+# Key Localizations
+keys.letsmodreboot.category=Lets's Mod Reboot
+keys.letsmodreboot.charge=Charge
+keys.letsmodreboot.release=Release

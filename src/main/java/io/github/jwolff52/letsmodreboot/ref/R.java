@@ -1,6 +1,8 @@
 package io.github.jwolff52.letsmodreboot.ref;
 
-
+/**
+ * General References used throughout the code.
+ */
 public class R {
     public static final String MOD_ID = "LetsModReboot";
     public static final String MOD_NAME = "Lets Mod Reboot";
